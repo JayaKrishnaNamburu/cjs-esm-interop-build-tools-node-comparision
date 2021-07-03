@@ -23,4 +23,12 @@ import preset from 'jss-preset-default'
 const jss = create(preset())
 ```
 
-And this works in `webpack` builds but not in nodejs
+And this works in `webpack` builds but not in nodejs.
+
+### Solution
+
+On a deeper look, it turns out, `jss-preset-default` does provide `module` filed in package.json.
+So, build tools picks `module` field and uses `esm` to build it. But `node` doesn't 
+recognize the `module` field.
+
+So, by aliasing the `jss-preset-default` imports to use `cjs` in `config` files of `webpack` and `rollup` does solves this issue

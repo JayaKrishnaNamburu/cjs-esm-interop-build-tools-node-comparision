@@ -1,5 +1,6 @@
 import { create } from 'jss'
 import preset from 'jss-preset-default'
+console.log(preset)
 const jss = create(preset.default())
 
 const sheet = jss.createStyleSheet({ primary: {

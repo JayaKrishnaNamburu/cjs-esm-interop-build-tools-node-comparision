@@ -2,7 +2,8 @@
     "type": "module",
     "scripts": {
         "start": "node node.mjs",
-        "build": "webpack --config webpack.config.js --watch",
+        "build": "yarn build:webpack && yarn build:rollup",
+        "build:webpack": "webpack --config webpack.config.js",
         "build:rollup": "rollup -c"
     },
     "dependencies": {
@@ -13,7 +14,10 @@
         "node": ">=14.16"
     },
     "devDependencies": {
+        "@rollup/plugin-alias": "^3.1.2",
+        "@rollup/plugin-commonjs": "^19.0.0",
         "@rollup/plugin-node-resolve": "^13.0.0",
+        "@rollup/plugin-replace": "^2.4.2",
         "html-webpack-plugin": "^5.3.2",
         "rollup": "^2.52.7",
         "rollup-plugin-inject-process-env": "^1.3.1",
