@@ -33,5 +33,6 @@ export default  {
   plugins: [
     new HTMLWebpackPlugin()
   ],
-  target: 'web'
+  target: 'web',
+  devtool: 'inline-source-map'
 };

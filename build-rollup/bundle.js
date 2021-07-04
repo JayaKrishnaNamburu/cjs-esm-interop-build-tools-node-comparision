@@ -4348,7 +4348,6 @@
     }
 
     var create = function create(options) {
-      console.log('create, esm');
       if (options === void 0) {
         options = {};
       }
@@ -4358,13 +4357,12 @@
       };
     };
 
-    console.log(create);
     const jss = create$1(create.default());
 
     const sheet = jss.createStyleSheet({ primary: {
         width: '100%',
         height: '100%'
-    }}, { generateId: () => 'primary' }).toString();
+    }}, { generateId: () => 'primary', Renderer: null }).toString();
     console.log(sheet);
 
 }());
